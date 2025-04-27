@@ -37,6 +37,10 @@ if (process.env.NODE_ENV === "production") {
     app.get("*", (req, res) => {
       res.sendFile(path.join(frontendPath, "index.html"));
     });
+  } else {
+    console.warn(
+      "Frontend build directory not found. Ensure the frontend is built and placed in the 'frontend/dist' folder."
+    );
   }
 }
 
