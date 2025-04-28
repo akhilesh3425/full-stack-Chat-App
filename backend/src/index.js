@@ -37,7 +37,7 @@ if (process.env.NODE_ENV === "production") {
   if (fs.existsSync(frontendPath)) {
     app.use(express.static(frontendPath));
 
-    app.get("*", (req, res) => {
+    app.get("/", (req, res) => {
       res.sendFile(path.join(frontendPath, "index.html"));
     });
     app.get("/login", (req, res) => {
